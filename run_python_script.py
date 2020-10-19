@@ -32,7 +32,7 @@ def run_python_script(script_name, *args, **kwargs):
 
     if profiler:
         logger.info("running with profiler")
-        command = "script.main(*args)"
+        command = "executable_script.main(*args)"
         filename = "%s.prof" % script_name
         cProfile.runctx(command, None, locals(), filename=filename)
         logger.info("To see profiler result, run:\nsnakeviz %s" % filename)
@@ -43,7 +43,12 @@ def run_python_script(script_name, *args, **kwargs):
 if __name__ == "__main__":
     cd4ml_logging.init()
     profiler = ' -p' in ' '.join(sys.argv)
+    print("##########")
+    print(profiler)
+    print("##########")
     script = sys.argv[1]
+    print(script)
+    print("##########")
     arguments = sys.argv[2:]
     # remove the profile flag now that profiler is on
     arguments = [i for i in arguments if i != '-p']
