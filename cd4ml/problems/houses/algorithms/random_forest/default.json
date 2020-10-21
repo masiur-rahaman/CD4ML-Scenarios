@@ -1,4 +1,4 @@
 {
-    "n_estimators": 200,
+    "n_estimators": 500,
     "max_features": "auto"
 }
